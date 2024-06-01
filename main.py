@@ -109,11 +109,11 @@ def draw_text(text, size, color, x, y):
 def game_over():
   click_sound.play()
   while True:
-    screen.blit(background_image, (0, 0))
-    draw_text("Game Over", 32, crimson_red, SCREEN_WIDTH//2, SCREEN_HEIGHT//4)
-    draw_text("Your Score: " + str(player_score), 16, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT//2)
-    draw_text("Press SPACE to Play Again", 16, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT*3//4)
-    draw_text("Press ESC to Go to Home Screen", 16, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT*3//4 + 40)
+    screen.blit(bg, (0, 0))
+    draw_text("Game Over", 36, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT//4)
+    draw_text("Your Score: " + str(player_score), 24, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT//2)
+    draw_text("Press SPACE to Play Again", 18, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT*3//4)
+    draw_text("Press ESC to Go to Home Screen", 18, mint_cream, SCREEN_WIDTH//2, SCREEN_HEIGHT*3//4 + 40)
     pygame.display.update()
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
@@ -220,7 +220,7 @@ def main_game():
 
         # Draw obstacles
       for obstacle in obstacles:
-        pygame.draw.rect(screen, crimson_red, pygame.Rect(obstacle[0], obstacle[1], 10, 10))
+        pygame.draw.rect(screen, black, pygame.Rect(obstacle[0], obstacle[1], 10, 10))
 
         # Update obstacles spawning status
       spawning_of_obstacle = False
@@ -229,11 +229,11 @@ def main_game():
         pygame.draw.rect(screen, lawn_green, pygame.Rect(position[0], position[1], 10, 10))
 
       # Draw fruits
-      pygame.draw.rect(screen, 'purple', pygame.Rect(position_of_fruit[0], position_of_fruit[1], 10, 10))
+      pygame.draw.rect(screen, 'red', pygame.Rect(position_of_fruit[0], position_of_fruit[1], 10, 10))
 
       # Draw obstacles
       for obstacle in obstacles:
-        pygame.draw.rect(screen, 'red', pygame.Rect(obstacle[0], obstacle[1], 10, 10))
+        pygame.draw.rect(screen, black, pygame.Rect(obstacle[0], obstacle[1], 10, 10))
 
       spawning_of_obstacle = False
 
